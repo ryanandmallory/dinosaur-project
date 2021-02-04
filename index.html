@@ -12,8 +12,32 @@
         <div class="main-wrapper">
             <div class="div-left">
                 <h1>How do you compare with dinosaurs?</h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <input type="text">
+                <p class="lead">Ever wondered how you compare in size, weight, and diet with with one of our former reptilien friends that walked our planet over 200 million years ago.</p>
+                <h3>Tell us a little bit about yourself</h3>
+                <form action="index.html" method>
+                    <div class="form-name">
+                        <input type="text" placeholder="Your first name">
+                    </div>
+                    <h5>Which type of unit do you prefer?</h5>
+                    <label for="units" id="units">
+                            <div class="radio-top">
+                                <input type="radio" id="metric" name="units" value="mertic">
+                                <label for="metric">
+                                    <span class="unit-lbl">Metric</span>
+                                    <div class="unit-line">&nbsp;</div>
+                                    <small class="unit-desc">Pretty much the rest of the world</small>
+                                </label>
+                            </div>
+                            <div class="radio-bottom">
+                                <input type="radio" id="imperial" name="units" value="imperial">
+                                <label for="imperial">
+                                    <span class="unit-lbl">Imperial</span>
+                                    <div class="unit-line">&nbsp;</div>
+                                    <small class="unit-desc">U.S., Liberia, and Myanmar</small>
+                                </label>
+                            </div>
+                    </label>
+                </form>
             </div>
             <div class="div-right">
                 <img src="img/t-rex-main.png" alt="T-rex Main">

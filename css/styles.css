@@ -132,21 +132,21 @@ small {
     padding-left: 5px;
 }
 
-.metrics-imperial-wrapper {
+.imperial-wrapper, .metric-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 80%;
 }
 
-.units-imperial {
+.units-imperial, .units-metric {
     width: 110px;
     padding: 10px 15px;
     font-size: 1.05rem;
     margin-right: 10px;
 }
 
-.units-imperial:last-child {
+.units-imperial:last-child, .units-metric:last-child {
     margin-right: 0;
 }
 
@@ -157,6 +157,14 @@ small {
     background: darkgray;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.units-metric {
+    width: 145px;
+}
+
+.metric-wrapper {
+    display: none;
 }
 
 .diet-selection {

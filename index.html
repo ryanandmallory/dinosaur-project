@@ -14,7 +14,7 @@
                 <h1>How do you compare with dinosaurs?</h1>
                 <p class="lead">Ever wondered how you compare in size, weight, and diet with with one of our former reptilien friends that walked our planet over 200 million years ago? See how you compare.</p>
                 <h3>Tell us a little bit about yourself</h3>
-                <form action="index.html" method>
+                <form id="input-user-data">
                     <div class="form-name">
                         <input type="text" placeholder="Your first name">
                     </div>
@@ -29,7 +29,7 @@
                                 </label>
                             </div>
                             <div class="radio-bottom">
-                                <input type="radio" id="metric" name="units" value="mertic">
+                                <input type="radio" id="metric" name="units" value="metric">
                                 <label for="metric">
                                     <span class="unit-lbl">Metric</span>
                                     <div class="unit-line">&nbsp;</div>
@@ -37,9 +37,9 @@
                                 </label>
                             </div>
                     </label>
-                    <div class="metrics-imperial">
+                    <div class="essentials-container">
                         <h5>Essentials &mdash; Imperial</h5>
-                        <div class="metrics-imperial-wrapper">
+                        <div class="imperial-wrapper">
                             <label for="feet-imperial">
                                 <input type="number" class="units-imperial" id="feet-imperial" placeholder="Feet">
                             </label>
@@ -48,17 +48,26 @@
                             </label>
                             <div class="unit-line-alt">&nbsp;</div>
                             <label for="pounds-imperial">
-                                <input type="number" class="units-imperial" id="punds-imperial" placeholder="Pounds">
+                                <input type="number" class="units-imperial" id="pounds-imperial" placeholder="Pounds">
+                            </label>
+                        </div>
+                        <div class="metric-wrapper">
+                            <label for="cm-metric">
+                                <input type="number" class="units-metric" id="cm-metric" placeholder="Height (cm)">
+                            </label>
+                            <div class="unit-line-alt">&nbsp;</div>
+                            <label for="kilo-metric">
+                                <input type="number" class="units-metric" id="kilo-imperial" placeholder="Weight (kg)">
                             </label>
                         </div>
                     </div>
-                    <h5>Select Your Favoriate Diet</h5>
+                    <h5>Select Your Favorite Diet</h5>
                     <select name="diet" id="diet" class="diet-selection">
                         <option value="herbivore">Herbivore</option>
                         <option value="omnivore">Omnivore</option>
                         <option value="carnivore">Carnivore</option>
                     </select>
-                    <input type="submit" placeholder="Compare Me" id="submit-btn">
+                    <button id="submit-btn">Compare</button>
                 </form>
             </div>
             <div class="div-right">
@@ -66,5 +75,6 @@
             </div>
         </div>
     </div>
+    <script src="js/app.js"></script>
 </body>
 </html>

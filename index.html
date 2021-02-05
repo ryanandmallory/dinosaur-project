@@ -12,7 +12,7 @@
         <div class="main-wrapper">
             <div class="div-left">
                 <h1>How do you compare with dinosaurs?</h1>
-                <p class="lead">Ever wondered how you compare in size, weight, and diet with with one of our former reptilien friends that walked our planet over 200 million years ago.</p>
+                <p class="lead">Ever wondered how you compare in size, weight, and diet with with one of our former reptilien friends that walked our planet over 200 million years ago? See how you compare.</p>
                 <h3>Tell us a little bit about yourself</h3>
                 <form action="index.html" method>
                     <div class="form-name">
@@ -21,14 +21,6 @@
                     <h5>Which type of unit do you prefer?</h5>
                     <label for="units" id="units">
                             <div class="radio-top">
-                                <input type="radio" id="metric" name="units" value="mertic">
-                                <label for="metric">
-                                    <span class="unit-lbl">Metric</span>
-                                    <div class="unit-line">&nbsp;</div>
-                                    <small class="unit-desc">Pretty much the rest of the world</small>
-                                </label>
-                            </div>
-                            <div class="radio-bottom">
                                 <input type="radio" id="imperial" name="units" value="imperial">
                                 <label for="imperial">
                                     <span class="unit-lbl">Imperial</span>
@@ -36,7 +28,37 @@
                                     <small class="unit-desc">U.S., Liberia, and Myanmar</small>
                                 </label>
                             </div>
+                            <div class="radio-bottom">
+                                <input type="radio" id="metric" name="units" value="mertic">
+                                <label for="metric">
+                                    <span class="unit-lbl">Metric</span>
+                                    <div class="unit-line">&nbsp;</div>
+                                    <small class="unit-desc">Pretty much the rest of the world</small>
+                                </label>
+                            </div>
                     </label>
+                    <div class="metrics-imperial">
+                        <h5>Essentials &mdash; Imperial</h5>
+                        <div class="metrics-imperial-wrapper">
+                            <label for="feet-imperial">
+                                <input type="number" class="units-imperial" id="feet-imperial" placeholder="Feet">
+                            </label>
+                            <label for="inches-imperial">
+                                <input type="number" class="units-imperial" id="inches-imperial" placeholder="Inches">
+                            </label>
+                            <div class="unit-line-alt">&nbsp;</div>
+                            <label for="pounds-imperial">
+                                <input type="number" class="units-imperial" id="punds-imperial" placeholder="Pounds">
+                            </label>
+                        </div>
+                    </div>
+                    <h5>Select Your Favoriate Diet</h5>
+                    <select name="diet" id="diet" class="diet-selection">
+                        <option value="herbivore">Herbivore</option>
+                        <option value="omnivore">Omnivore</option>
+                        <option value="carnivore">Carnivore</option>
+                    </select>
+                    <input type="submit" placeholder="Compare Me" id="submit-btn">
                 </form>
             </div>
             <div class="div-right">

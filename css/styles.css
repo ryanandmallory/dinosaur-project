@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
+* {
+    box-sizing: border-box;
+}
+
 
 body {
     display: flex;
+    align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -31,28 +36,60 @@ p {
 
 .container {
     width: 1080px;
-    margin: auto;
-    background: #e3e3e3;
+    height: 100%;
+    margin: 1% auto;
+    display: block;
+    position: relative;
+}
+
+.container::after {
+    content: "";
+    background: #e3e3e3 url("../img/bkg-one.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .main-wrapper{
     display: flex;
     flex-direction: row;
-    padding: 2.5% 0;
-}
-.div-left {
-    padding: 3.5%;
+    height: 100%;
 }
 
 .div-left, .div-right {
-    width: 540px;
+    width: 50%;
+    min-height: 100%;
 }
+
+.div-left {
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.75);
+    clip-path: inset(0px -8px 0 0);
+    padding: 2.5% 2.5% 0 2.5%;
+}
+
+.div-right {
+    display: flex;
+    align-items: center;
+}
+
 .lead {
     margin: 15px 0;
 }
 
 .div-right img {
-    width: 540px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 90%;
+    display: block;
 }
 
 form {
@@ -93,4 +130,54 @@ input[type="radio"] {
 small {
     font-size: 0.75rem;
     padding-left: 5px;
+}
+
+.metrics-imperial-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.units-imperial {
+    width: 110px;
+    padding: 10px 15px;
+    font-size: 1.05rem;
+    margin-right: 10px;
+}
+
+.units-imperial:last-child {
+    margin-right: 0;
+}
+
+.unit-line-alt {
+    display: inline-block;
+    width: 3px;
+    height: 35px;
+    background: darkgray;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.diet-selection {
+    width: 80%;
+    padding: 10px 20px;
+    font-size: 1.05rem;
+}
+
+select{
+    max-height: calc(1.75em + 1.05rem);
+    height: calc(1.75em + 1.05rem);
+}
+
+#submit-btn {
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    background: #b11b1b;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 20px 10px;
+    border: 0;
 }

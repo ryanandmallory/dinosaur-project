@@ -39,23 +39,30 @@ document.addEventListener('submit', (event)=> {
     const poundsImperial = document.querySelector('#pounds-imperial');
     const cmMetric = document.querySelector('#cm-metric');
     const kiloMetric = document.querySelector('#kilo-metric');
+    const modal = document.querySelector('.modal');
+    const messagePara = document.querySelector('.message p');
+    const closeBtn = document.querySelector('.close');
 
+    event.preventDefault();
     if (event.target.matches('#input-user-data')) {
         if (imperialWrapper.classList.contains('active')){
             if (yourName.value === '' || feetImperial.value == '' || inchesImperial.value === '' || poundsImperial.value === '') {
-                alert('Please fill out your imperial information.')
-            }
-            else {
-                alert('Thank you for your imperial information.');
+                modal.style.display = 'block';
+                messagePara.textContent = 'No biggie, stuff like this happens. Please resubmit your imperial units. Thanks.';
+            } else {
+                alert('Imperial success, let us store some data.');
             }
         }
         if (metricWrapper.classList.contains('active')){
             if (yourName.value === '' || cmMetric.value == '' || kiloMetric.value === '') {
-                alert('Please fill out your metric information.')
+                modal.style.display = 'block';
+                messagePara.textContent = 'No biggie, stuff like this happens. Please resubmit your metric units. Thanks.';
+            } else {
+                alert('Metric success, let us store some data.');
             }
-            else {
-                alert('Thank you for your metric information.');
-            }
-        } 
+        }
+        closeBtn.addEventListener('click', ()=>{
+            modal.style.display = 'none';
+        });
     }
 }, false);

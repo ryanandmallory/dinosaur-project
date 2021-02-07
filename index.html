@@ -5,9 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Dinosaur Project</title>
+    <title>Dinosaur Facts</title>
 </head>
 <body>
+    <div class="dino-container">
+        <div class="dino-wrapper">
+            <div class="dino-row">
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/any" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/people" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/tech" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dino-row">
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/any" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/people" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/tech" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dino-row">
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/any" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/people" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+                <div class="dino-display">
+                    <img src="https://placeimg.com/600/350/tech" class="dino-img" alt="Dino Image">
+                    <div class="dino-content">
+                        <h3 class="dino-head">Dino Headline Here</h3>
+                        <p class="dino-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione?</p>
+                        <button class="dino-btn">More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="close-display">Pretty Interesting &mdash; Thanks!</button>
+    </div>
     <div class="container">
         <div class="modal">
             <div class="message">
@@ -26,7 +109,20 @@
                     <div class="form-name">
                         <input type="text" id="your-name" placeholder="Your first name">
                     </div>
-                    <h5>Which type of unit do you prefer?</h5>
+                    <h5>Select your avatar and favorite color</h5>
+                    <div class="icon-color-wrapper">
+                        <div class="icon-wrapper">
+                            <img src="img/dad.svg" alt="Dad" class="your-icon">
+                            <img src="img/mom.svg" alt="Mom" class="your-icon">
+                            <img src="img/boy.svg" alt="Boy" class="your-icon">
+                            <img src="img/girl.svg" alt="Girl" class="your-icon">
+                            <img src="img/person.svg" alt="Person" class="your-icon">
+                        </div>
+                        <div class="color-wrapper">
+                            <input type="color" id="favcolor" name="favcolor" value="#00aaff">
+                        </div>
+                    </div>
+                    <h5 style="margin-top: 10px;">Which type of unit do you prefer?</h5>
                     <label for="units" id="units">
                             <div class="radio-top">
                                 <input type="radio" id="imperial" name="units" value="imperial">

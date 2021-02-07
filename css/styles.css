@@ -10,6 +10,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
+    position: relative;
 }
 
 h1, h3, h5 {
@@ -104,6 +105,51 @@ input[type="text"]  {
     width: 80%;
     padding: 10px 15px;
     font-size: 1.05rem;
+}
+
+
+.icon-wrapper {
+    display: flex;
+}
+
+.your-icon {
+    padding: 8px;
+}
+
+.your-icon:nth-child(1) {
+    width: 68px;
+}
+
+.your-icon:nth-child(2) {
+    width: 75px;
+}
+
+.your-icon:nth-child(3) {
+    width: 60px;
+}
+
+.your-icon:nth-child(4) {
+    width: 63px;
+}
+
+.your-icon:nth-child(5) {
+    width: 63px;
+}
+
+.icon-color-wrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input#favcolor {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding: 8px;
+    border: none;
+    background: #fff;
 }
 
 .radio-top, .radio-bottom {
@@ -248,4 +294,70 @@ select{
 
 .message button:hover {
     opacity: 0.65;
+}
+
+/* Dino Display */
+
+.dino-container {
+    display: none;
+    position: absolute;
+    z-index: 500;
+    background: rgba(0,0,0,0.75);
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.dino-wrapper {
+    width: 1080px;
+    margin: 40px auto;
+}
+
+.dino-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dino-display {
+    width: 33.33%;
+    max-width: 33.33%;
+    background: #e3e3e3;
+}
+
+.dino-content {
+    padding: 20px;
+}
+
+.dino-img {
+    width: 100%;
+    max-width: 100%;;
+}
+
+.dino-head {
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+.dino-desc {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.close-display {
+    display: block;
+    margin: 0 auto 40px;
+    width: 285px;
+    padding: 15px 20px;
+    background: none;
+    color: #fff;
+    border: 2px solid#fff;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.8s;
+}
+
+.close-display:hover {
+    background: white;
+    color:  rgba(0,0,0,0.75);
+    font-weight: bold;
 }

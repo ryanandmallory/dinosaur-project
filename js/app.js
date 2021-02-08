@@ -29,8 +29,22 @@ function User (name, color, icon, feet, inches, pounds, centimeters, kilometers,
 
 //UI Constructor
 function UI() {}
+
+//UI User
 UI.prototype.addUserToDisplay = function (user) {
     console.log(user);
+}
+
+// UI Dinosaur
+UI.prototype.addDinoToDisplay = function (triceratops, tyrannosaurus, anklyosaurus, brachiosaurus, stegosaurus, elasmosaurus, pteranodon, pigeon) {
+    console.log(triceratops);
+    console.log(tyrannosaurus);
+    console.log(anklyosaurus);
+    console.log(brachiosaurus);
+    console.log(stegosaurus);
+    console.log(elasmosaurus);
+    console.log(pteranodon);
+    console.log(pigeon);
 }
 
 document.addEventListener('click', (event)=> {
@@ -115,4 +129,40 @@ document.addEventListener('submit', (event)=> {
         });
     }
 }, false);
+
+//Create Dino Displays
+function DinoCreate (species, image, weight, height, diet, where, when, fact) {
+    this.species = species;
+    this.image = image;
+    this.weight = weight;
+    this.height = height;
+    this.diet = diet;
+    this.where = where;
+    this.when = when;
+    this.fact = fact;
+}
+
+fetch('../js/dino.json')
+  .then(response => {
+    return response.json().then( obj=> {
+        //Instantiate Dinos from JSON file
+        const triceratops = new DinoCreate(obj.Dinos[0].species, obj.Dinos[0].image, obj.Dinos[0].weight, obj.Dinos[0].height, obj.Dinos[0].diet, obj.Dinos[0].where, obj.Dinos[0].when, obj.Dinos[0].fact);
+        const tyrannosaurus = new DinoCreate(obj.Dinos[1].species, obj.Dinos[1].image, obj.Dinos[1].weight, obj.Dinos[1].height, obj.Dinos[1].diet, obj.Dinos[1].where, obj.Dinos[1].when, obj.Dinos[1].fact);
+        const anklyosaurus = new DinoCreate(obj.Dinos[2].species, obj.Dinos[2].image, obj.Dinos[2].weight, obj.Dinos[2].height, obj.Dinos[2].diet, obj.Dinos[2].where, obj.Dinos[2].when, obj.Dinos[2].fact);
+        const brachiosaurus = new DinoCreate(obj.Dinos[3].species, obj.Dinos[3].image, obj.Dinos[3].weight, obj.Dinos[3].height, obj.Dinos[3].diet, obj.Dinos[3].where, obj.Dinos[3].when, obj.Dinos[3].fact);
+        const stegosaurus = new DinoCreate(obj.Dinos[4].species, obj.Dinos[4].image, obj.Dinos[4].weight, obj.Dinos[4].height, obj.Dinos[4].diet, obj.Dinos[4].where, obj.Dinos[4].when, obj.Dinos[4].fact);
+        const elasmosaurus = new DinoCreate(obj.Dinos[5].species, obj.Dinos[5].image, obj.Dinos[5].weight, obj.Dinos[5].height, obj.Dinos[5].diet, obj.Dinos[5].where, obj.Dinos[5].when, obj.Dinos[5].fact);
+        const pteranodon = new DinoCreate(obj.Dinos[6].species, obj.Dinos[6].image, obj.Dinos[6].weight, obj.Dinos[6].height, obj.Dinos[6].diet, obj.Dinos[6].where, obj.Dinos[6].when, obj.Dinos[6].fact);
+        const pigeon = new DinoCreate(obj.Dinos[7].species, obj.Dinos[7].image, obj.Dinos[7].weight, obj.Dinos[7].height, obj.Dinos[7].diet, obj.Dinos[7].where, obj.Dinos[7].when, obj.Dinos[7].fact);
+        
+        //Instantiate UI
+        const ui = new UI();
+        ui.addDinoToDisplay(triceratops, tyrannosaurus, anklyosaurus, brachiosaurus, stegosaurus, elasmosaurus, pteranodon, pigeon);
+
+    }).catch ( error => {
+        console.log('Something went wrong, please check your code.');
+        console.error(error);
+    });
+});
+
 

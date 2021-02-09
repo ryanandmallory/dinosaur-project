@@ -12,6 +12,7 @@ const modal = document.querySelector('.modal');
 const messagePara = document.querySelector('.message p');
 const closeBtn = document.querySelector('.close');
 const dinoContainer  = document.querySelector('.dino-container');
+let imperialFlag = true;
 let avatarIcon = '';
 
 //User Constructor
@@ -27,21 +28,53 @@ function User (name, color, icon, feet, inches, pounds, centimeters, kilometers,
     this.diet = diet;
 }
 
+const randomizeFact = function(dinosaur) {
+    const random = Math.floor(Math.random() * 6) + 1;
+    console.log(random)
+    if (random === 1) { return 'The ' + dinosaur.species + ' weighed ' + dinosaur.weight + ' kilograms.' }
+    if (random === 2) { return 'The ' + dinosaur.species + ' height was ' + dinosaur.height + ' centimeters.' }
+    if (random === 3) { return 'The ' + dinosaur.species + ' was a ' + dinosaur.diet + '.' }
+    if (random === 4) { return 'The ' + dinosaur.species + ' roamed in the ' + dinosaur.where + ' region.'; }
+    if (random === 5) { return 'The ' + dinosaur.species + ' lived in the ' + dinosaur.when + ' period.'; }
+    else { return dinosaur.fact; }
+}
+
+const imperialMetricDisplay = function (person){
+    if (document.querySelector('#feet-imperial').value){
+        return person.feet + ' feet and ' +  person.inches + ' inches, and you weigh ' + person.pounds + ' pounds.';
+    }
+    else{
+        return person.centimeters + ' centimeters, and you weigh ' + person.kilometers + ' kilometers.';
+    } 
+}
+
+const userDescription = function(displayPerson) {
+    if (displayPerson.diet === 'herbivore') {
+        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also a herbivore, which means you like to eat plants. See you compare with these reptilien beasts.';
+    }
+    if (displayPerson.diet === 'carnivore') {
+        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also a carnivore, which means you like to eat meat. See you compare with these reptilien beasts.';
+    } else {
+        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also an omnivore, which means you like to eat meat. See you compare with these reptilien beasts.';
+    }
+}
+
+
 //UI Constructor
 function UI() {}
 
 // UI Dinosaur
 UI.prototype.addDinoToDisplay = function (triceratops, tyrannosaurus, anklyosaurus, brachiosaurus, stegosaurus, elasmosaurus, pteranodon, pigeon) {
     UI.prototype.addUserToDisplay = function (user) {    
-    createDinoTile(triceratops.image, triceratops.species);
-    createDinoTile(tyrannosaurus.image, tyrannosaurus.species);
-    createDinoTile(anklyosaurus.image, anklyosaurus.species);
-    createDinoTile(brachiosaurus.image, brachiosaurus.species);
-    createUserTile(user.icon, user.name, user.color); 
-    createDinoTile(stegosaurus.image, stegosaurus.species);
-    createDinoTile(elasmosaurus.image, elasmosaurus.species);
-    createDinoTile(pteranodon.image, pteranodon.species);
-    createDinoTile(pigeon.image, pigeon.species);
+    createDinoTile(triceratops.image, triceratops.species, randomizeFact(triceratops));
+    createDinoTile(tyrannosaurus.image, tyrannosaurus.species, randomizeFact(tyrannosaurus));
+    createDinoTile(anklyosaurus.image, anklyosaurus.species, randomizeFact(anklyosaurus));
+    createDinoTile(brachiosaurus.image, brachiosaurus.species, randomizeFact(brachiosaurus));
+    createUserTile(user.icon, user.name, user.color, userDescription(user)); 
+    createDinoTile(stegosaurus.image, stegosaurus.species, randomizeFact(stegosaurus));
+    createDinoTile(elasmosaurus.image, elasmosaurus.species, randomizeFact(elasmosaurus));
+    createDinoTile(pteranodon.image, pteranodon.species, randomizeFact(pteranodon));
+    createDinoTile(pigeon.image, pigeon.species, pigeon.fact);
     }
 }
 
@@ -118,7 +151,8 @@ document.addEventListener('submit', (event)=> {
                 modal.style.display = 'block';
                 messagePara.textContent = 'No biggie, stuff like this happens. Please resubmit your metric units. Thanks.';
             } else {
-                alert('Metric success, let us store some data.');
+                imperialFlag = false;
+                alert(imperialFlag);
                 dinoContainer.style.display = 'block';
             }
         }

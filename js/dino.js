@@ -1,7 +1,7 @@
 const dinoWrapper = document.querySelector('.dino-wrapper');
 const dinoRow = document.querySelector('.dino-row');
 
-const createDinoTile = function(image, species){
+const createDinoTile = function(image, species, fact){
     
     const divTile = document.createElement('div');
     const img = document.createElement('img');
@@ -22,7 +22,7 @@ const createDinoTile = function(image, species){
     const h3Txt = document.createTextNode(species);
     
     para.setAttribute("class", "dino-desc");
-    const paraTxt = document.createTextNode('Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione');
+    const paraTxt = document.createTextNode(fact);
 
     button.setAttribute("class", "dino-btn");
     const btnTxt = document.createTextNode("Learn More");
@@ -39,7 +39,7 @@ const createDinoTile = function(image, species){
     dinoWrapper.appendChild(dinoRow);
 }
 
-const createUserTile = function(avatar, name, color){
+const createUserTile = function(avatar, name, color, fact){
     const divTile = document.createElement('div');
     const img = document.createElement('img');
     const h3 = document.createElement('h3');
@@ -62,7 +62,7 @@ const createUserTile = function(avatar, name, color){
     const h3Txt = document.createTextNode(name);
     
     para.setAttribute("class", "dino-desc");
-    const paraTxt = document.createTextNode('Lorem ipsum dolor sit amet consectetur, adipisicing elit quam provident asperiores! Distinctio eaque fuga ratione');
+    const paraTxt = document.createTextNode(fact);
 
     divTile.appendChild(img);
     h3.appendChild(h3Txt);

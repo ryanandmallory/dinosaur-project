@@ -30,21 +30,19 @@ function User (name, color, icon, feet, inches, pounds, centimeters, kilometers,
 //UI Constructor
 function UI() {}
 
-//UI User
-UI.prototype.addUserToDisplay = function (user) {
-    console.log(user);
-}
-
 // UI Dinosaur
 UI.prototype.addDinoToDisplay = function (triceratops, tyrannosaurus, anklyosaurus, brachiosaurus, stegosaurus, elasmosaurus, pteranodon, pigeon) {
-    console.log(triceratops);
-    console.log(tyrannosaurus);
-    console.log(anklyosaurus);
-    console.log(brachiosaurus);
-    console.log(stegosaurus);
-    console.log(elasmosaurus);
-    console.log(pteranodon);
-    console.log(pigeon);
+    UI.prototype.addUserToDisplay = function (user) {    
+    createDinoTile(triceratops.image, triceratops.species);
+    createDinoTile(tyrannosaurus.image, tyrannosaurus.species);
+    createDinoTile(anklyosaurus.image, anklyosaurus.species);
+    createDinoTile(brachiosaurus.image, brachiosaurus.species);
+    createUserTile(user.icon, user.name, user.color); 
+    createDinoTile(stegosaurus.image, stegosaurus.species);
+    createDinoTile(elasmosaurus.image, elasmosaurus.species);
+    createDinoTile(pteranodon.image, pteranodon.species);
+    createDinoTile(pigeon.image, pigeon.species);
+    }
 }
 
 document.addEventListener('click', (event)=> {

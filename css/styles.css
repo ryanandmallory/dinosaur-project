@@ -323,6 +323,7 @@ select{
 .dino-row {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .dino-display {
@@ -348,6 +349,50 @@ select{
 .dino-desc {
     font-size: 0.9rem;
     margin-bottom: 15px;
+}
+
+.user {
+    padding: 20px;
+    position: relative;
+}
+
+.user::after {
+    content: "";
+    background: #e3e3e3;
+    opacity: 0.45;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 5;
+}
+
+.user img {
+    position: relative;
+    width: 202px;
+    height: auto;
+    background: #fff;
+    display: block;
+    margin: auto;
+    border-radius: 100%;
+    padding: 10px;
+    z-index: 20;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6); 
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.6);
+}
+
+.user h3 {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 20;
+}
+
+.user p {
+    text-align: center;
+    position: relative;
+    z-index: 20;
 }
 
 .close-display {

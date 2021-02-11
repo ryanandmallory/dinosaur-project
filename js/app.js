@@ -50,12 +50,12 @@ const imperialMetricDisplay = function (person){
 
 const userDescription = function(displayPerson) {
     if (displayPerson.diet === 'herbivore') {
-        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also a herbivore, which means you like to eat plants. See you compare with these reptilien beasts.';
+        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also a herbivore, which means you like to eat plants. See how you compare with these reptilien beasts.';
     }
     if (displayPerson.diet === 'carnivore') {
-        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also a carnivore, which means you like to eat meat. See you compare with these reptilien beasts.';
+        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also a carnivore, which means you like to eat meat. See how you compare with these reptilien beasts.';
     } else {
-        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also an omnivore, which means you like to eat meat. See you compare with these reptilien beasts.';
+        return 'Greetings ' + displayPerson.name + '! Your height is ' + imperialMetricDisplay(displayPerson) + ' You are also an omnivore, which means you like to eat meat and plants. See how you compare with these reptilien beasts.';
     }
 }
 
@@ -76,6 +76,29 @@ UI.prototype.addDinoToDisplay = function (triceratops, tyrannosaurus, anklyosaur
     createDinoTile(pteranodon.image, pteranodon.species, randomizeFact(pteranodon));
     createDinoTile(pigeon.image, pigeon.species, pigeon.fact);
     }
+    document.addEventListener('click', (event)=> {
+        if (event.target.matches('.dino-btn')) {
+            const dinoName = event.target.previousElementSibling.previousElementSibling.innerHTML;
+            if (dinoName === 'Triceratops'){ createDinoMainDisplay(triceratops); }
+            if (dinoName === 'Tyrannosaurus Rex'){ createDinoMainDisplay(tyrannosaurus); }
+            if (dinoName === 'Anklyosaurus'){ createDinoMainDisplay(anklyosaurus); }
+            if (dinoName === 'Brachiosaurus'){ createDinoMainDisplay(brachiosaurus); }
+            if (dinoName === 'Stegosaurus'){ createDinoMainDisplay(stegosaurus); }
+            if (dinoName === 'Elasmosaurus'){ createDinoMainDisplay(elasmosaurus); }
+            if (dinoName === 'Pteranodon'){ createDinoMainDisplay(pteranodon); }
+            if (dinoName === 'Pigeon'){ createDinoMainDisplay(pigeon); }
+            document.querySelector('.dino-main-modal').style.display = 'flex';
+            document.querySelector('.dino-container').style.display = 'none';
+        }
+        if (event.target.matches('.dino-close-span')) {
+            const close = document.querySelector('.dino-close-span');
+            const dinoInnerDiv = document.querySelector('.dino-inner-div');
+            close.remove();
+            dinoInnerDiv.remove();
+            document.querySelector('.dino-main-modal').style.display = 'none';
+            document.querySelector('.dino-container').style.display = 'block';
+        }
+    });
 }
 
 document.addEventListener('click', (event)=> {
@@ -96,6 +119,7 @@ document.addEventListener('click', (event)=> {
         essentialsHead.innerHTML = 'Essentials &mdash; Imperial';
     }
     if (event.target.matches('.close-display')) {
+        document.querySelectorAll('.dino-display').forEach(display => display.remove());
         dinoContainer.style.display = 'none';
     }
     if (event.target.matches('.your-icon')) {
@@ -111,6 +135,7 @@ document.addEventListener('click', (event)=> {
             }
             });
     }
+    
 }, false);
 
 
@@ -152,7 +177,6 @@ document.addEventListener('submit', (event)=> {
                 messagePara.textContent = 'No biggie, stuff like this happens. Please resubmit your metric units. Thanks.';
             } else {
                 imperialFlag = false;
-                alert(imperialFlag);
                 dinoContainer.style.display = 'block';
             }
         }

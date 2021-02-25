@@ -106,9 +106,13 @@ form {
 
 input[type="text"]  {
     display: block;
-    width: 80%;
+    width: 95%;
     padding: 10px 15px;
     font-size: 1.05rem;
+}
+
+#your-name {
+    width: 80%;
 }
 
 
@@ -237,16 +241,32 @@ select{
     height: calc(1.75em + 1.05rem);
 }
 
-#submit-btn {
+.button-wrapper {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+
+#submit-btn, #reset {
     width: 150px;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 35px;
-    background: #b11b1b;
+    background: #28751a;
     color: #fff;
     font-weight: 600;
     text-transform: uppercase;
     padding: 12px 20px 10px;
     border: 0;
+    transition: 0.65s;
+}
+
+#submit-btn:hover, #reset:hover {
+    opacity: 0.85;
+}
+
+#reset {
+    background: #b11b1b;
 }
 
 /* Modal */
@@ -334,6 +354,9 @@ select{
     width: 33.33%;
     max-width: 33.33%;
     background: #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dino-content {
@@ -353,7 +376,7 @@ select{
 .dino-desc {
     font-size: 0.9rem;
     margin-bottom: 15px;
-    min-height: 40px;
+    min-height: 60px;
 }
 
 .dino-btn {
@@ -501,5 +524,174 @@ select{
     background-color: #c9c4c4;
 }
 
+@media only screen and (max-width: 1190px) {
+    .dino-wrapper {
+        width: 100%;
+    }
+}
 
+@media only screen and (max-width: 1080px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    input[type="text"] {
+        width: 95%;
+    }
+    #your-name {
+        width: 95%;
+    }
+    .div-right img {
+        height: initial;
+    }
+    .imperial-wrapper, .metric-wrapper {
+        width: 95%;
+    }
+    .diet-selection {
+        width: 95%;
+    }
+    .button-wrapper {
+        width: 95%;
+    }
+    .unit-line-alt {
+        display: none;
+    }
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+    .user h3 {
+        margin-top: 0;
+    }
+    .dino-desc {
+        font-size: 0.85rem;
+    }
+}
 
+@media only screen and (max-width: 890px) {
+    .div-right {
+        display: none;
+    }
+    .div-left {
+        width: 100%;
+        min-height: 100%;
+    }
+    .div-left-mobile-wrapper {
+        width: 85%;
+        margin: 25px auto;
+    }
+    .user img {
+        width: 100px;
+        height: 100px;
+    }
+    .dino-desc {
+        font-size: 0.80rem;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .dino-row {
+        display: flex;
+    }
+    .dino-display {
+        width: 100%;
+        max-width: 100%;
+    }
+    .dino-content {
+        width: 80%;
+        margin: auto;
+    }
+    .dino-head {
+        font-size: 2.25rem;
+    }
+    .dino-desc {
+        font-size: 1rem;
+        min-height: 35px;
+    }
+    .user .dino-img {
+        margin-top: 20px;
+    }
+    .user .dino-head {
+        margin-top: 15px;
+    }
+    .user .dino-desc {
+        margin-top: 10px;
+        width: 80%;
+    }
+    .dino-inner-div {
+        width: 100%;
+        height: 100%;
+    }
+    .dino-main-img {
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (max-width: 485px) {
+    .div-left-mobile-wrapper {
+        width: 98%;
+        margin: 25px auto;
+    }
+    .your-icon:nth-child(1) {
+        width: 48px;
+    }
+    .your-icon:nth-child(2) {
+        width: 55px;
+    }
+    .your-icon:nth-child(3) {
+        width:48px;
+    }
+    .your-icon:nth-child(4) {
+        width: 48px;
+    }
+    .your-icon:nth-child(5) {
+        width: 48px;
+    }
+    input#favcolor {
+        width: 40px;
+        height: 40px;
+    }
+    .dino-head {
+        font-size: 1.75rem;
+    }
+    .dino-content {
+        width: 90%;
+    }
+    .dino-head-h2 {
+        font-size: 1.5rem;
+    }
+    .dino-desc {
+        font-size: 0.8rem;
+    }
+    .dino-summary-p, .dino-desc-p, .dino-stats {
+        font-size: 0.85rem;
+    }
+    .dino-close-span {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    h1 {
+        font-size: 2.0rem;
+    }
+    .lead {
+        font-size: 0.85rem;
+    }
+    h3, h5 {
+        font-size: 0.80rem;
+    }
+    small {
+        font-size: 0.65rem;
+    }
+    .unit-lbl {
+        font-size: 0.85rem;
+    }
+    #submit-btn, #reset {
+        width: 125px;
+    }
+    .modal {
+        width: 285px;
+    }
+}

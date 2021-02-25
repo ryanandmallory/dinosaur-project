@@ -26,7 +26,8 @@
         </div>
         <div class="main-wrapper">
             <div class="div-left">
-                <h1>How do you compare with dinosaurs?</h1>
+                <div class="div-left-mobile-wrapper">
+                    <h1>How do you compare with dinosaurs?</h1>
                 <p class="lead">Ever wondered how you compare in size, weight, and diet with with one of our former reptilien friends that walked our planet over 200 million years ago? See how you compare.</p>
                 <h3>Tell us a little bit about yourself</h3>
                 <form id="input-user-data">
@@ -69,23 +70,23 @@
                         <h5>Essentials &mdash; Imperial</h5>
                         <div class="imperial-wrapper active">
                             <label for="feet-imperial">
-                                <input type="number" class="units-imperial" id="feet-imperial" placeholder="Feet">
+                                <input type="text" class="units-imperial" id="feet-imperial" placeholder="Feet" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                             </label>
                             <label for="inches-imperial">
-                                <input type="number" class="units-imperial" id="inches-imperial" placeholder="Inches">
+                                <input type="text" class="units-imperial" id="inches-imperial" placeholder="Inches" maxlength="2" oninput="this.value=this.value.replace(/[^0-11]/g,'');">
                             </label>
                             <div class="unit-line-alt">&nbsp;</div>
                             <label for="pounds-imperial">
-                                <input type="number" class="units-imperial" id="pounds-imperial" placeholder="Pounds">
+                                <input type="text" class="units-imperial" id="pounds-imperial" placeholder="Pounds" maxlength="3" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                             </label>
                         </div>
                         <div class="metric-wrapper">
                             <label for="cm-metric">
-                                <input type="number" class="units-metric" id="cm-metric" placeholder="Height (cm)">
+                                <input type="text" class="units-metric" id="cm-metric" placeholder="Height (cm)" maxlength="3" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                             </label>
                             <div class="unit-line-alt">&nbsp;</div>
                             <label for="kilo-metric">
-                                <input type="number" class="units-metric" id="kilo-metric" placeholder="Weight (kg)">
+                                <input type="text" class="units-metric" id="kilo-metric" placeholder="Weight (kg)"  maxlength="3" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
                             </label>
                         </div>
                     </div>
@@ -95,8 +96,12 @@
                         <option value="omnivore">Omnivore</option>
                         <option value="carnivore">Carnivore</option>
                     </select>
-                    <button id="submit-btn">Compare</button>
+                    <div class="button-wrapper">
+                        <button id="submit-btn">Compare</button>
+                        <button id="reset">Reset</button>
+                    </div>
                 </form>
+                </div>
             </div>
             <div class="div-right">
                 <img src="img/t-rex-main.png" alt="T-rex Main">

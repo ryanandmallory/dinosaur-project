@@ -54,8 +54,8 @@ const createUserTile = function(avatar, name, color, fact){
     if (avatar === 'Boy'){ img.src = '../img/boy.svg'; }
     if (avatar === 'Girl'){ img.src = '../img/girl.svg'; }
     if (avatar === 'Person'){ img.src = '../img/person.svg'; }
-    if (avatar === ''){ img.src = '../img/person.svg'; }
 
+    console.log('Avatar: ' + avatar)
     img.alt = name;
     img.setAttribute("class", "dino-img");
         
@@ -74,7 +74,19 @@ const createUserTile = function(avatar, name, color, fact){
     dinoWrapper.appendChild(dinoRow);
 }
 
-const createDinoMainDisplay = function (name) {
+const numberWithCommas = function(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const titleCase = function (word) {
+    let s = word;
+        for (let i = 0; i < s.length; i++) {
+            const firstLetter = s.charAt(0).toUpperCase() + word.slice(1);
+            return firstLetter;
+        }
+}
+
+const createDinoMainDisplay = function (name, image, fact, weight, height, diet, where, when) {
     //  Create modal display variables
     const innerDiv = document.createElement('div');
     const dinoImg = document.createElement('img');
@@ -103,15 +115,15 @@ const createDinoMainDisplay = function (name) {
 
     // Place content in modal display
     dinoImg.alt = name;
-    dinoImg.src = name.image
-    const h2Txt = document.createTextNode(name.species);
-    const summaryTxt = document.createTextNode(name.fact);
+    dinoImg.src = image;
+    const h2Txt = document.createTextNode(name);
+    const summaryTxt = document.createTextNode(fact);
     const descTxt = document.createTextNode('Here are some staggering specs:');
-    const dinoStatsTxt1 = document.createTextNode(`Weight: ${name.weight}`);
-    const dinoStatsTxt2 = document.createTextNode(`Height: ${name.height}`);
-    const dinoStatsTxt3 = document.createTextNode(`Diet: ${name.diet}`);
-    const dinoStatsTxt4 = document.createTextNode(`Where: ${name.where}`);
-    const dinoStatsTxt5 = document.createTextNode(`When: ${name.when}`);
+    const dinoStatsTxt1 = document.createTextNode(`Weight: ${numberWithCommas(weight)} kilograms or ${numberWithCommas(Math.round(weight * 2.205))} pounds`);
+    const dinoStatsTxt2 = document.createTextNode(`Height: ${height} centimeters or ${Math.round(height / 2.54)} inches`);
+    const dinoStatsTxt3 = document.createTextNode(`Diet: ${titleCase(diet)}`);
+    const dinoStatsTxt4 = document.createTextNode(`Where: ${where}`);
+    const dinoStatsTxt5 = document.createTextNode(`When: ${when}`);
     const closeSpan = document.createTextNode('X');
 
     // Append content to element

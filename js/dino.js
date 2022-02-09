@@ -40,36 +40,29 @@ const createDinoTile = function(image, species, fact){
     dinoWrapper.appendChild(dinoRow);
 }
 
-const createUserTile = function(avatar, name, color, fact){
+const createUserTile = function(avatar, name, color){
     const divTile = document.createElement('div');
     const img = document.createElement('img');
     const h3 = document.createElement('h3');
-    const para = document.createElement("p");
 
     divTile.setAttribute("class", "dino-display user");
     divTile.style.backgroundColor = color;
 
-    if (avatar === 'Dad'){ img.src = '../img/dad.svg'; }
-    if (avatar === 'Mom'){ img.src = '../img/mom.svg'; }
-    if (avatar === 'Boy'){ img.src = '../img/boy.svg'; }
-    if (avatar === 'Girl'){ img.src = '../img/girl.svg'; }
-    if (avatar === 'Person'){ img.src = '../img/person.svg'; }
+    if (avatarIcon === 'Dad'){ img.src = '../img/dad.svg'; }
+    if (avatarIcon === 'Mom'){ img.src = '../img/mom.svg'; }
+    if (avatarIcon === 'Boy'){ img.src = '../img/boy.svg'; }
+    if (avatarIcon === 'Girl'){ img.src = '../img/girl.svg'; }
+    if (avatarIcon === 'Person'){ img.src = '../img/person.svg'; }
 
-    console.log('Avatar: ' + avatar)
     img.alt = name;
     img.setAttribute("class", "dino-img");
         
     h3.setAttribute("class", "dino-head");
     const h3Txt = document.createTextNode(name);
-    
-    para.setAttribute("class", "dino-desc");
-    const paraTxt = document.createTextNode(fact);
 
     divTile.appendChild(img);
     h3.appendChild(h3Txt);
     divTile.appendChild(h3);
-    para.appendChild(paraTxt);
-    divTile.appendChild(para);
     dinoRow.appendChild(divTile);
     dinoWrapper.appendChild(dinoRow);
 }
@@ -86,7 +79,9 @@ const titleCase = function (word) {
         }
 }
 
-const createDinoMainDisplay = function (name, image, fact, weight, height, diet, where, when) {
+const createDinoMainDisplay = function (
+    name, image, fact, weight, height, diet, where, when
+    ) {
     //  Create modal display variables
     const innerDiv = document.createElement('div');
     const dinoImg = document.createElement('img');
@@ -119,11 +114,21 @@ const createDinoMainDisplay = function (name, image, fact, weight, height, diet,
     const h2Txt = document.createTextNode(name);
     const summaryTxt = document.createTextNode(fact);
     const descTxt = document.createTextNode('Here are some staggering specs:');
-    const dinoStatsTxt1 = document.createTextNode(`Weight: ${numberWithCommas(weight)} kilograms or ${numberWithCommas(Math.round(weight * 2.205))} pounds`);
-    const dinoStatsTxt2 = document.createTextNode(`Height: ${height} centimeters or ${Math.round(height / 2.54)} inches`);
-    const dinoStatsTxt3 = document.createTextNode(`Diet: ${titleCase(diet)}`);
-    const dinoStatsTxt4 = document.createTextNode(`Where: ${where}`);
-    const dinoStatsTxt5 = document.createTextNode(`When: ${when}`);
+    const dinoStatsTxt1 = document.createTextNode(
+        `Weight: ${numberWithCommas(weight)} kilograms or ${numberWithCommas(Math.round(weight * 2.205))} pounds`
+    );
+    const dinoStatsTxt2 = document.createTextNode(
+        `Height: ${height} centimeters or ${Math.round(height / 2.54)} inches`
+    );
+    const dinoStatsTxt3 = document.createTextNode(
+        `Diet: ${titleCase(diet)}`
+    );
+    const dinoStatsTxt4 = document.createTextNode(
+        `Where: ${where}`
+    );
+    const dinoStatsTxt5 = document.createTextNode(
+        `When: ${when}`
+    );
     const closeSpan = document.createTextNode('X');
 
     // Append content to element
